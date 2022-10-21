@@ -11,9 +11,10 @@ function PotionList(props){
       {props.potionList.map((potion) =>
         <Potion
           whenPotionClicked = { props.onPotionSelection }
-          names={potion.names}
+          name={potion.names}
           type={potion.type}
           effect={potion.effect}
+          quantity={potion.quantity}
           id={potion.id}
           key={potion.id}/>
       )}

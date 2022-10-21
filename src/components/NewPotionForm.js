@@ -12,6 +12,7 @@ function NewPotionForm(props){
       type: event.target.type.value, 
       effect: event.target.effect.value, 
       quantity: event.target.quantity.value,
+      photo: event.target.photo.value,
       id: v4()
     });
   }

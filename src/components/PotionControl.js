@@ -3,6 +3,7 @@ import NewPotionForm from './NewPotionForm';
 import PotionList from './PotionList';
 import PotionDetail from './PotionDetail';
 import EditPotionForm from './EditPotionForm';
+import mainPotionList from "./MainPotionList";
 
 class PotionControl extends React.Component {
 
@@ -10,7 +11,7 @@ class PotionControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      mainPotionList: [],
+      mainPotionList: mainPotionList,
       selectedPotion: null,
       editing: false
     };

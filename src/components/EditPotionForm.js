@@ -7,7 +7,7 @@ function EditPotionForm (props) {
 
   function handleEditPotionFormSubmission(event) {
     event.preventDefault();
-    props.onEditPotion({name: event.target.name.value, type: event.target.type.value, effect: event.target.effect.value, quantity: event.target.quantity.value, id: potion.id});
+    props.onEditPotion({name: event.target.name.value, type: event.target.type.value, effect: event.target.effect.value, quantity: event.target.quantity.value, photo: event.target.photo.value, id: potion.id});
   }
   return (
     <React.Fragment>

@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 
 
+
 function PotionList(props){
   return (
     <React.Fragment>
@@ -15,6 +16,7 @@ function PotionList(props){
           type={potion.type}
           effect={potion.effect}
           quantity={potion.quantity}
+          photo={potion.photo}
           id={potion.id}
           key={potion.id}/>
       )}

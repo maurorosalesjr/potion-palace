@@ -5,8 +5,8 @@ function Potion(props){
   return (
     <React.Fragment>
       <div onClick = {() => props.whenPotionClicked(props.id)}>
-      <h3>{props.name}</h3>
-      <p><em>{props.type}</em></p>
+      <img src={props.photo} alt="An image of a potion" />
+      <p><em>{props.name}</em></p>
       <hr/>
       </div>
     </React.Fragment>
@@ -18,6 +18,7 @@ Potion.propTypes = {
   type: PropTypes.string.isRequired,
   effect: PropTypes.string,
   quantity: PropTypes.number.isRequired,
+  photo: PropTypes.string,
   id: PropTypes.string, 
   whenPotionClicked: PropTypes.func 
 };

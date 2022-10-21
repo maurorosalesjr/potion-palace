@@ -7,8 +7,8 @@ function PotionDetail(props){
   return (
     <React.Fragment>
       <h1>Potion Detail</h1>
-      <h3>{potion.name}</h3>
-      <h6>{potion.type}</h6>
+      <h3>{potion.name}- <em>{potion.type} potion</em></h3>
+      
       <p>{potion.effect}</p>
       <p>{potion.quantity} {potion.name} potions left!</p>
       <button onClick={ props.onClickingEdit }>Update Potion</button> 

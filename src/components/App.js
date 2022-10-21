@@ -2,11 +2,18 @@ import React from "react";
 import Header from "./Header";
 import PotionControl from "./PotionControl";
 
+const basicStyle = {
+  marginLeft: "5%",
+  marginRight: "5%",
+  
+}
 function App(){
   return (
     <React.Fragment>
       <Header />
-      <PotionControl />
+      <div style={basicStyle}>
+        <PotionControl />
+      </div>
     </React.Fragment>
   );
 }

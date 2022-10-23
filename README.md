@@ -14,13 +14,13 @@
 
 ## Description
 
-Enables User to have full CRUD funtionality over the Potion inventory. User can "purcahse" from List component, but Edit and Delete from Detail component.
+Enables User to have full CRUD funtionality over the Potion inventory. User can "purchase" from List component, but Edit and Delete from Detail component.
 
 ## Setup/Installation Requirements
 
 * Go to https://github.com/maurorosalesjr/potion-palace
 * Clone repository
-or 
+* or 
 * In terminal / bash type: git clone https://github.com/maurorosalesjr/potion-palace
 
 * Once cloned, in terminal/bash type: npm run build

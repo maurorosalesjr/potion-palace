@@ -13,9 +13,11 @@ function Potion(props){
       <div onClick = {() => props.whenPotionClicked(props.id)}>
         <img style={imgStyle} src={props.photo} alt="An image of a potion" />
         <p><em>{props.name}</em></p>
+        <p>{props.effect}</p>
         <p>{props.quantity} potions remaining</p>
       </div>
         <button onClick={()=> props.whenSaleClicked(props.id) }>Quick Buy!</button>
+        <button onClick={()=> props.whenBulkClicked(props.id) }>Quick Buy a Barrel(60 potions)!</button>
         <hr/>
 
     </React.Fragment>

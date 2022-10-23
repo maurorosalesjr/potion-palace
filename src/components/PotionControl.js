@@ -88,6 +88,26 @@ class PotionControl extends React.Component {
         }
     }
 
+    handlePotionBulk = (id) => {
+      const sellPotion = this.state.mainPotionList.filter(potion => potion.id === id)[0];
+  
+      if(sellPotion.quantity > 60) {
+        const sold = sellPotion.quantity - 60;
+        const soldPotion = {...sellPotion, quantity: sold}
+        const newMainPotionList = this.state.mainPotionList.filter(potion => potion.id !== id).concat(soldPotion)
+          this.setState({
+            mainPotionList: newMainPotionList,
+            selectedPotion: null,
+                        });
+          } else {
+            const newMainPotionList = this.state.mainPotionList.filter(potion => potion.id !== id);
+              this.setState({
+                mainPotionList: newMainPotionList,
+                selectedPotion: null
+              });
+          }
+      }
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null; 
@@ -101,15 +121,14 @@ class PotionControl extends React.Component {
                                             onClickingEdit = {this.handleEditClick} 
                                             />
       buttonText = "Return to Potion List";
-      // While our PotionDetail component only takes placeholder data, we will eventually be passing the value of selectedPotion as a prop.
     } else if (this.state.formVisibleOnPage) {
-      // This conditional needs to be updated to "else if."
       currentlyVisibleState = <NewPotionForm onNewPotionCreation={this.handleAddingNewPotionToList}  />;
       buttonText = "Return to Potion List";
     } else {
       currentlyVisibleState = <PotionList potionList={this.state.mainPotionList} 
                                           onPotionSelection={this.handleChangingSelectedPotion}
-                                          onClickingSubtract = {this.handlePotionSub} />;
+                                          onClickingSubtract = {this.handlePotionSub}
+                                          onClickingBulk = {this.handlePotionBulk} />;
       buttonText = "Add Potion";
     }
 

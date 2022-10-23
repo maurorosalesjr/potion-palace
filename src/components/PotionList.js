@@ -13,6 +13,7 @@ function PotionList(props){
         <Potion
           whenPotionClicked={props.onPotionSelection}
           whenSaleClicked={props.onClickingSubtract}
+          whenBulkClicked={props.onClickingBulk}
           name={potion.name}
           type={potion.type}
           effect={potion.effect}

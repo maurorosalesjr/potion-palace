@@ -22,7 +22,7 @@ function ReusableForm(props) {
         <input 
           type='number'
           name='quantity'
-          placeholder='How Many?' />
+          placeholder='A barrel is 60 Potions' /> 
           <br></br>
           <input 
             type='file'

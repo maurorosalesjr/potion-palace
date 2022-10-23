@@ -70,13 +70,22 @@ class PotionControl extends React.Component {
 
   handlePotionSub = (id) => {
     const sellPotion = this.state.mainPotionList.filter(potion => potion.id === id)[0];
-    const sold = sellPotion.quantity - 1;
-    const soldPotion = {...sellPotion, quantity: sold}
-    const newMainPotionList = this.state.mainPotionList.filter(potion => potion.id !== id).concat(soldPotion)
-      this.setState({
-        mainPotionList: newMainPotionList,
-        selectedPotion: null,
-                    });
+
+    if(sellPotion.quantity > 0) {
+      const sold = sellPotion.quantity - 1;
+      const soldPotion = {...sellPotion, quantity: sold}
+      const newMainPotionList = this.state.mainPotionList.filter(potion => potion.id !== id).concat(soldPotion)
+        this.setState({
+          mainPotionList: newMainPotionList,
+          selectedPotion: null,
+                      });
+        } else {
+          const newMainPotionList = this.state.mainPotionList.filter(potion => potion.id !== id);
+            this.setState({
+              mainPotionList: newMainPotionList,
+              selectedPotion: null
+            });
+        }
     }
 
   render(){

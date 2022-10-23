@@ -8,7 +8,7 @@ const imgStyle = {
 }
 
 function PotionDetail(props){
-  const { potion, onClickingDelete, onClickingSubtract} = props;
+  const { potion, onClickingDelete } = props;
 
   return (
     <React.Fragment>
@@ -17,6 +17,7 @@ function PotionDetail(props){
       <h3>{potion.name}- <em>{potion.type} potion</em></h3>
       <p>{potion.effect}</p>
       <p>{potion.quantity} {potion.name} potions left!</p>
+      
       <button onClick={ props.onClickingEdit }>Update Potion</button> 
       <button onClick={()=> onClickingDelete(potion.id) }>Close Potion</button> 
       <hr/>

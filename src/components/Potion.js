@@ -11,12 +11,13 @@ function Potion(props){
   return (
     <React.Fragment>
       <div onClick = {() => props.whenPotionClicked(props.id)}>
-      <img style={imgStyle} src={props.photo} alt="An image of a potion" />
-      <p><em>{props.name}</em></p>
-      <button onClick={()=> props.whenSaleClicked(props.id) }>Quick Buy!</button>
-      <p>{props.quantity} potions remaining</p>
-      <hr/>
+        <img style={imgStyle} src={props.photo} alt="An image of a potion" />
+        <p><em>{props.name}</em></p>
+        <p>{props.quantity} potions remaining</p>
       </div>
+        <button onClick={()=> props.whenSaleClicked(props.id) }>Quick Buy!</button>
+        <hr/>
+
     </React.Fragment>
   );
 }

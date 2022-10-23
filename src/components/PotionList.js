@@ -12,10 +12,10 @@ function PotionList(props){
       {props.potionList.map((potion) =>
         <Potion
           whenPotionClicked = { props.onPotionSelection }
-          name={potion.names}
+          name={potion.name}
           type={potion.type}
           effect={potion.effect}
-          quantity={potion.quantity}
+          quantity={parseInt(potion.quantity)}
           photo={potion.photo}
           id={potion.id}
           key={potion.id}/>

@@ -8,18 +8,28 @@ function ReusableForm(props) {
         <input
           type='text'
           name='name'
-          placeholder='Potion Names' />
+          placeholder='Potion Name' />
+          <br></br>
         <input
           type='text'
           name='type'
           placeholder='Potion Type' />
+          <br></br>
         <textarea
           name='effect'
           placeholder='Describe the efffects.' />
+          <br></br>
         <input 
           type='number'
           name='quantity'
           placeholder='How Many?' />
+          <br></br>
+          <input 
+            type='file'
+            name='photo'
+            placeholder='add a photo'
+          />
+          <br></br>
         <button type='submit'>{props.buttonText}</button>
       </form>
     </React.Fragment>

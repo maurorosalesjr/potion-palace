@@ -20,7 +20,7 @@ function NewPotionForm(props){
     <React.Fragment>
         <ReusableForm 
         formSubmissionHandler={handleNewPotionFormSubmission}
-        buttonText="Help!" />
+        buttonText="Add Potion!" />
     </React.Fragment>
   );
 }

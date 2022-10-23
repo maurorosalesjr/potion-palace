@@ -18,7 +18,7 @@ const headerStyle = {
 function Header(){
   return (
     <React.Fragment>
-    <div style={headerStyle} blurRadius={90}>
+    <div style={headerStyle}>
       <h1>Percy's Potion Palace</h1>
       <h2>The Bulk Potion Emporium</h2>
     </div>

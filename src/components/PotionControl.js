@@ -68,6 +68,10 @@ class PotionControl extends React.Component {
       });
   }
 
+  handlePotionSub = (id) => {
+    this.setState({quantity: this.state.quantity - 1});
+  }
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null; 
@@ -78,7 +82,8 @@ class PotionControl extends React.Component {
     } else if (this.state.selectedPotion != null) {
       currentlyVisibleState = <PotionDetail potion = {this.state.selectedPotion} 
                                             onClickingDelete = {this.handleDeletingPotion}
-                                            onClickingEdit = {this.handleEditClick} />
+                                            onClickingEdit = {this.handleEditClick} 
+                                            onClickSubtract = {this.handlePotionSub} />
       buttonText = "Return to Potion List";
       // While our PotionDetail component only takes placeholder data, we will eventually be passing the value of selectedPotion as a prop.
     } else if (this.state.formVisibleOnPage) {
@@ -86,8 +91,8 @@ class PotionControl extends React.Component {
       currentlyVisibleState = <NewPotionForm onNewPotionCreation={this.handleAddingNewPotionToList}  />;
       buttonText = "Return to Potion List";
     } else {
-      currentlyVisibleState = <PotionList potionList={this.state.mainPotionList} onPotionSelection={this.handleChangingSelectedPotion} />;
-      // Because a user will actually be clicking on the potion in the Potion component, we will need to pass our new handleChangingSelectedPotion method as a prop.
+      currentlyVisibleState = <PotionList potionList={this.state.mainPotionList} 
+                                          onPotionSelection={this.handleChangingSelectedPotion} />;
       buttonText = "Add Potion";
     }
 

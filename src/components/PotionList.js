@@ -11,7 +11,8 @@ function PotionList(props){
       <hr/>
       {props.potionList.map((potion) =>
         <Potion
-          whenPotionClicked = { props.onPotionSelection }
+          whenPotionClicked={props.onPotionSelection}
+          whenSaleClicked={props.onClickingSubtract}
           name={potion.name}
           type={potion.type}
           effect={potion.effect}

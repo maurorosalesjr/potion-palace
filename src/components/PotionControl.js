@@ -69,8 +69,15 @@ class PotionControl extends React.Component {
   }
 
   handlePotionSub = (id) => {
-    this.setState({quantity: this.state.quantity - 1});
-  }
+    const sellPotion = this.state.mainPotionList.filter(potion => potion.id === id)[0];
+    const sold = sellPotion.quantity - 1;
+    const soldPotion = {...sellPotion, quantity: sold}
+    const newMainPotionList = this.state.mainPotionList.filter(potion => potion.id !== id).concat(soldPotion)
+      this.setState({
+        mainPotionList: newMainPotionList,
+        selectedPotion: null,
+                    });
+    }
 
   render(){
     let currentlyVisibleState = null;
@@ -83,7 +90,7 @@ class PotionControl extends React.Component {
       currentlyVisibleState = <PotionDetail potion = {this.state.selectedPotion} 
                                             onClickingDelete = {this.handleDeletingPotion}
                                             onClickingEdit = {this.handleEditClick} 
-                                            onClickSubtract = {this.handlePotionSub} />
+                                            />
       buttonText = "Return to Potion List";
       // While our PotionDetail component only takes placeholder data, we will eventually be passing the value of selectedPotion as a prop.
     } else if (this.state.formVisibleOnPage) {
@@ -92,7 +99,8 @@ class PotionControl extends React.Component {
       buttonText = "Return to Potion List";
     } else {
       currentlyVisibleState = <PotionList potionList={this.state.mainPotionList} 
-                                          onPotionSelection={this.handleChangingSelectedPotion} />;
+                                          onPotionSelection={this.handleChangingSelectedPotion}
+                                          onClickingSubtract = {this.handlePotionSub} />;
       buttonText = "Add Potion";
     }
 

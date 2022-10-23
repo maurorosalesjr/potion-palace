@@ -5,6 +5,7 @@ import PotionControl from "./PotionControl";
 const basicStyle = {
   marginLeft: "5%",
   marginRight: "5%",
+  backgroundColor: "grey",
   
 }
 function App(){

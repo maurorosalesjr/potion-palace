@@ -13,6 +13,8 @@ function Potion(props){
       <div onClick = {() => props.whenPotionClicked(props.id)}>
       <img style={imgStyle} src={props.photo} alt="An image of a potion" />
       <p><em>{props.name}</em></p>
+      <button onClick={()=> props.whenSaleClicked(props.id) }>Quick Buy!</button>
+      <p>{props.quantity} potions remaining</p>
       <hr/>
       </div>
     </React.Fragment>
@@ -26,7 +28,8 @@ Potion.propTypes = {
   quantity: PropTypes.number.isRequired,
   photo: PropTypes.string,
   id: PropTypes.string, 
-  whenPotionClicked: PropTypes.func 
+  whenPotionClicked: PropTypes.func, 
+  whenSaleClicked: PropTypes.func
 };
 
 export default Potion;

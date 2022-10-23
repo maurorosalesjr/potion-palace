@@ -17,8 +17,6 @@ function PotionDetail(props){
       <h3>{potion.name}- <em>{potion.type} potion</em></h3>
       <p>{potion.effect}</p>
       <p>{potion.quantity} {potion.name} potions left!</p>
-      <button onClick={()=> onClickingSubtract(potion.id) }>Quick Buy!</button>
-
       <button onClick={ props.onClickingEdit }>Update Potion</button> 
       <button onClick={()=> onClickingDelete(potion.id) }>Close Potion</button> 
       <hr/>

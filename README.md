@@ -36,11 +36,11 @@ or
 
 ## Screen Shots
 
-![Screen shot](src/img/screenshot1.png "Screen shot of ")
+![Screen shot](src/img/screenshot1.png "Screen shot of main list")
 
-![Screen shot](src/img/screenshot1.png "Screen shot of ")
+![Screen shot](src/img/screenshot2.png "Screen shot of potion detail")
 
-![Screen shot](src/img/screenshot1.png "Screen shot of ")
+![Screen shot](src/img/screenshot3.png "Screen shot of new potion form")
 
 ## License
 
